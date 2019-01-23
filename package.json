@@ -77,6 +77,5 @@
         }
     },
     "dependencies": {
-        "vapid": "^0.7.4"
     }
 }
