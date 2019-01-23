@@ -1,0 +1,29 @@
+@import variables
+
+// Notice
+
+.notice
+  background: $notice
+  text-align: center
+  .section
+    position: relative
+    padding: 1em
+
+.notice-message
+  display: table
+  width: 100%
+
+.notice-text,
+.notice-dismiss
+  display: table-cell
+  vertical-align: middle
+
+.notice-dismiss
+  width: 3em
+  img
+    cursor: pointer
+    width: 2em
+    height: 2em
+    float: right
+    &:hover
+      opacity: 0.7

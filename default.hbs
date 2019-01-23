@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{lang}}">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="HandheldFriendly" content="True" />
+		
+		<title>{{meta_title}}</title>
+
+		<link href="https://fonts.googleapis.com/css?family=Monoton|Work+Sans:400,800" rel="stylesheet">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="{{asset "built/site.css"}}" />
+		<link rel="author" href="humans.txt">
+
+		 {{ghost_head}}
+		 {{{block "head"}}}
+	</head>
+	<body class="components components_index {{body_class}}">
+		{{> "menu"}}
+
+		<div class="contents">
+			{{{body}}}
+		</div>
+
+		{{> "footer"}}
+		
+		<script src="{{asset "built/site.js"}}"></script>
+		{{!--<script defer async src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script> --}}
+		<script defer async src="{{asset "built/copy-to-clipboard.js"}}"></script>
+		{{{block "scripts"}}}
+		{{ghost_foot}}
+	</body>
+</html>

@@ -1,0 +1,15 @@
+<div class="row">
+	<div class="section">
+		<div class="pagination">
+			{{#if prev}}
+			<a href="{{page_url prev}}" class="previous_page">← Previous</a>
+			{{/if}}
+			{{#has pages="count:>1"}}
+			<span>    Page {{page}} of {{pages}}    </span>
+			{{/has}}
+			{{#if next}}
+			<a href="{{page_url next}}" class="next_page">Next →</a>
+			{{/if}}
+		</div>
+	</div>
+</div>

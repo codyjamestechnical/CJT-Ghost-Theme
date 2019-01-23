@@ -1,0 +1,243 @@
+@import variables
+
+.header
+	position: fixed
+	width: 100vw
+	opacity: .95
+
+.contents
+	padding-top: $header-height
+
+html
+	scroll-behavior: smooth
+
+a.anchor 
+	display: block
+	position: relative
+	top: -$header-height
+	visibility: hidden
+
+.feed-card img
+	width: calc(100% + 2em)
+	margin-left: -1em
+	margin-top: -1em
+
+.cover-image
+	@include background-size(cover !important)
+	height: 25em
+	width: 100%
+	position: relative
+	overflow: hidden
+	h1, h2, hr, img
+		z-index: 1
+		position: relative
+
+.cover-image-above
+	z-index: 1
+	position: relative !important
+
+.cover-image-shade
+		background-color: rgba(0,0,0,.4)
+		position: absolute
+		// filter: blur(100px)
+		width: 100vw
+		height: 100%
+
+hr
+	height: 3px
+
+.headshot
+	width: 250px
+
+.footer-icon
+	font-size: 25px
+	vertical-align: middle
+	a
+		&:hover
+			color: $gray-light !important
+
+// Post Listng
+
+.post-image-list, .post-image
+	border-radius: 0.5rem
+	vertical-align: middle
+	margin-top: .5em
+	width: 110%
+	margin-left: -5%
+	margin-right: -5%
+	box-shadow: 0 0.1em .2em rgba(0,0,0,.08)
+
+.post-section
+	padding-bottom: 5em
+
+// Project sass
+.project-link-image
+	width: 17em
+	height: 12em
+	background-size: 17em !important
+	margin: -2em 0 0 0
+	border-radius: .2em .2em 0 0
+
+.project-link-card
+	height: 24em
+	width: 17em
+	overflow: hidden
+	white-space: normal
+	overflow-wrap: break-word !important
+	border-radius: .2em
+	box-shadow: 0 .2em .2em rgba(0, 0, 0, .08)
+	padding: 2em 0em 1em 0em
+
+.no-header-view
+
+
+.scroller-container
+	overflow-x: scroll
+	height: 26em
+	place-content: space-between
+	-webkit-overflow-scrolling: touch
+	white-space: nowrap !important
+	padding: 1em  2em
+	margin-left: -.98em
+	display: grid
+	grid-gap: 1em
+	// grid-template-columns: repeat(3, 1fr)
+	grid-auto-flow: column
+
+	
+::-webkit-scrollbar
+	display: none
+	height: 0px
+	width: 0px
+	background: transparent
+	opacity: 0
+::-webkit-scrollbar-thumb
+	display: none
+	background: transparent
+	opacity: 0
+::-webkit-scrollbar-track
+	background: transparent
+	opacity: 0
+	display: none
+.scroller-spacer
+	display: none
+
+.scroller-item
+	display: inline-block
+	
+// helper extenders
+.cover
+	background-size: cover
+
+.narrow-smaller
+	max-width: 17em
+	margin: 0 auto
+
+.grow
+	@include transition( transform ease .3s)
+	&:hover
+		@include transform(scale(1.01))
+
+.text-justify
+	text-align: justify
+
+.text-small
+	font-size: .82031rem
+
+.margin-vertical
+	margin-top: 1em
+	margin-bottom: 1em
+
+.margin-horizontal
+	margin-left: 1em
+	margin-right: 1em
+
+//colors
+.red
+	color: $red
+	
+.white
+	color: $white
+
+// Ghost Tags
+figure
+	margin: 0
+
+.kg-image
+	width: 100%
+
+.kg-image-wide
+	width: 110%
+	margin-left: -5%
+	margin-right: -5%
+
+.kg-gallery-container
+	display: flex
+	flex-direction: column
+	max-width: 1040px
+	width: 100vw
+	padding: 0.5em
+
+.kg-gallery-row
+	display: flex
+	flex-direction: row
+	justify-content: center
+
+.kg-gallery-image img
+	display: block
+	margin: 0
+	width: 100%
+	height: 100%
+
+.kg-gallery-row:not(:first-of-type)
+	margin: 0.75em 0 0 0
+
+.kg-gallery-image:not(:first-of-type)
+	margin: 0 0 0 0.75em
+
+@media screen and (min-width: $desktop)
+	.kg-width-wide
+		margin-right: -10%
+		margin-left: -10%
+		width: 120%
+
+@media screen and (max-width: $phablet)
+	//Ghost Tags
+	.kg-width-wide
+		width: 100vw
+		margin-left: -1em
+		border-radius: 0px
+
+	.post-image
+		width: 100%
+		margin-left: 0
+		margin-right: 0
+
+
+	.full
+		width: 100vw
+		margin-left: -1em
+		border-radius: 0px
+
+	.headshot
+		width: 150px
+
+	.scroller-spacer
+		display: block
+		width: 10px
+		height: 100%
+
+	.scroller-container
+		width: 100vw
+
+@media screen and (max-width: $handheld)
+	h1
+		font-size: 1.7rem
+
+	.post-image
+		border-radius: 0px
+		vertical-align: middle
+		margin-top: .5em
+		width: 100vw
+		margin-left: -1em
+		margin-right: 0

@@ -1,0 +1,42 @@
+{{!< default}}
+<div class="page">
+	<div class="row bg-orange">
+		<div class="section narrow center light-text">
+			<img class="largest" src="{{asset "images/project-icon.svg"}}" alt="">
+			<h1>My Projects</h1>
+			<hr class="small">
+			<p>My personal projects with Arduino, computers, electronics, wood working, 3D printing, and more</p>
+		</div>
+	</div>
+	
+	{{#foreach posts}}
+	
+	
+	<div class="row">
+		<div class="section center narrow">
+			<a href="{{url}}">
+				<h2 class="gray">{{title}}</h2>
+				<div class="text-small gray-light">
+					<time class="" datetime="{{date format='YYYY-MM-DD'}}">
+					{{date format="MMM DD YYYY"}}
+					</time>
+				</div>
+				<img src="{{feature_image}}" alt="" class="post-image-list">
+			</a>
+			<div>
+				<p class="gray text-justify">{{excerpt}}</p>
+				<p class="padding">
+					<a href="{{url}}" class=" bold btn small solid round orange"> READ MORE</a>
+				</p>
+			</div>
+			
+		</div>
+	</div>
+
+	{{#unless @last}}
+	<hr class="narrow margin-vertical opacity-4">
+	{{/unless}}
+	
+	{{/foreach}}
+	{{pagination}}
+</div>

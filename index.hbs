@@ -1,0 +1,143 @@
+{{!< default}}
+<div class="row hero cover-image" style="background: url({{@blog.cover_image}}) no-repeat center ;">
+	<div class="cover-image-shade"></div>
+	<div class="section narrow center" >
+		
+		<img src="{{asset "images/logos/for-dark-bg.svg"}}" class="" alt="">
+		{{!-- <h1>{{@blog.title}}</h1> --}}
+		<br>
+		<p>&nbsp</p>
+		
+	</div>
+</div>
+<div class="page">
+	<a class="anchor" id="services"></a>
+	<div class="row bg">
+		<div class="section center">
+			<h1>My Services</h1>
+			<hr class="bg-green small">
+			<div class="autogrid padded">
+				<div class="col">
+					<img src="{{asset "images/software.svg"}}" alt="" class="large no-margin-top">
+					<h2>Web And Software</h2>
+					<p>Full stack website, web app and software development; experienced in JavaScript, HTML, SASS, NodeJS, PHP, C, SQL and Swift</p>
+				</div>
+				<div class="col">
+					<img src="{{asset "images/repair.svg"}}" alt="" class="large no-margin-top">
+					<h2>Hardware Repair</h2>
+					<p>I am experienced in general hardware repair, including component level repair</p>
+				</div>
+				<div class="col">
+					<img src="{{asset "images/computer.svg"}}" class="large no-margin-top">
+					<h2>Custom Coputer Building</h2>
+					<p>Need a custom gaming computer, photo editing station, or any other custom built pc? You've come to the right place; with 10 years of experience, I can build the machine you need to get the job done! </p>
+				</div>
+			</div>
+			<a href="#contact" class="btn solid round green">Contact For Pricing And Details</a>
+		</div>
+	</div>
+	<a class="anchor" id="about"></a>
+	<div class="row">
+		<div class="section center gray">
+			{{#get "posts" limit="1" filter="tag:content-about"}}
+			{{#foreach posts}}
+			<h1 class="center">{{title}}</h1>
+			<hr class="small">
+			<ul>
+				<li>
+					<p>
+						<p>{{content}}</p>
+						{{else}}
+						<p>Missing A Post With Tag "content-about"</p>
+						{{/foreach}}
+						{{/get}}
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<a class="anchor" id="projects"></a>
+	<div class="row bg-orange">
+		<div class="section center scroller-parent ">
+			<h1 class="white">Latest Projects</h1>
+			<hr class="small ">
+			<div class="scroller-container  ">
+				{{#get "posts" limit="10" filter="tag:project"}}
+				{{#foreach posts}}
+				<div class="scroller-item">
+					<a href="{{url}}">
+						<div class="project-link-card narrow-smaller bg-white grow">
+							<div class=" project-link-image" style="background: url({{img_url feature_image}}) no-repeat "></div>
+							
+							<h2 class="gray-dark">{{title}}</h2>
+							<p class="gray padding-sides">
+								{{excerpt words="132"}}
+							</p>
+						</div>
+					</a>
+				</div>
+				{{/foreach}}
+				{{/get}}
+				<div class="scroller-spacer"></div>
+			</div>
+			<a href="{{@blog.url}}/tag/project" class="btn no-outline round white">View All Projects</a>
+		</div>
+	</div>
+	<a class="anchor" id="contact"></a>
+	<div class="row">
+		<div class="section center gray">
+			<h1>Contact Me</h1>
+			<hr class="small bg-green">
+			<div class="autogrid padded">
+				<div class="col gray">
+					<h2>Contact Info</h2>
+					<p>
+						<a class="gray" id="myEmail" href="mailto:email@codyjames.in">email@codyjames.in</a> |
+						<a class="gray" onclick="copyToClipboard(document.getElementById('myEmail'))" role="button" ><i class="far fa-copy"></i> Copy</a>
+					</p>
+					<p>
+						<a class="gray" id="myPhone" href="tel:865-283-1942">865-283-1942</a> |
+						<a class="gray" onclick="copyToClipboard(document.getElementById('myPhone'))" role="button" ><i class="far fa-copy"></i> Copy</a>
+					</p>
+					<p> Monday - Friday: 11AM - 4PM EST</p>
+				</div>
+				<div class="col">
+					<h2>Send A Message</h2>
+					<form class="full-width-forms" action="">
+						<label>
+							<input name="Name" type="text" placeholder="Full Name" tabindex="1">
+						</label>
+						<label>
+							<input name="Phone" type="tel" placeholder="Phone Number" tabindex="2">
+						</label>
+						<label>
+							<input name="email" type="email" placeholder="Email Address" tabindex="3">
+						</label>
+						<label>
+							<select name="reason" id="" tabindex="4" placeholder="Reason For Contacting">
+								<option class="hide" value="" selected disabled hidden >Reason For Contacting</option>
+								
+								<option value="hardware-repair">Hardware Repair</option>
+								<option value="computer-repair">Computer Repair</option>
+								<option value="computer-build">Build A computer</option>
+								<option value="web-dev">Build/Design A website</option>
+								<option value="software-dev">Software Development</option>
+								<option value="server-setup">Web Server Setup</option>
+								<option value="other">Other</option>
+							</select>
+						</label>
+						
+						<label>
+							<textarea name="Message" id="Message" cols="30" rows="5" placeholder="Message" tabindex="5" required></textarea>
+						</label>
+						<br>
+						<button type="submit" class="btn solid round green">Send Me A Message</button>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+</div>

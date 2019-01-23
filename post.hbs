@@ -1,0 +1,49 @@
+{{!< default}}
+{{#post}}
+{{#if feature_image}}
+{{!-- <div class="row hero cover-image" style="background: url({{feature_image}}) no-repeat center ;">
+    <div class="cover-image-shade"></div>
+    <div class="section center cover-image-above" >
+        <h1>{{title}}</h1>
+        
+    </div>
+</div> --}}
+<div class="row">
+    
+    <div class="section center">
+        
+        <h1 class="gray-dark">{{title}}</h1>
+        <div>
+            <time class="text-small gray-light" datetime="{{date format='YYYY-MM-DD'}}">
+            {{date format="MMM DD YYYY"}}
+            </time>
+        </div>
+        
+        <img src="{{feature_image}}" class="post-image" alt="">
+        
+    </div>
+</div>
+{{/if}}
+{{#unless feature_image}}
+<div class="no-header-view row hero bg-orange">
+    <div class="section  center">
+        <h1>{{title}}</h1>
+        <div class="text-small opacity-5 gray-light">
+            <time class="" datetime="{{date format='YYYY-MM-DD'}}">
+            {{date format="MMM DD YYYY"}}
+            </time>
+        </div>
+    </div>
+</div>
+{{/unless}}
+<div class="page gray">
+    <div class="row">
+        <div class="section post-section">
+            
+            {{content}}
+        </div>
+    </div>
+    
+    
+</div>
+{{/post}}
